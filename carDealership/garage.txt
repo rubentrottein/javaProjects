@@ -1,0 +1,1 @@
+Garage [garage={Bugatti=Voiture [model=Bugatti, fuel=100, power=false, nbRoues=4], Mercedes=Voiture [model=Mercedes, fuel=100, power=false, nbRoues=4], bmw=Voiture [model=bmw, fuel=100, power=false, nbRoues=4], Opel=Voiture [model=Opel, fuel=100, power=false, nbRoues=4], Bentley=Voiture [model=Bentley, fuel=100, power=false, nbRoues=4]}]

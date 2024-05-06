@@ -1,0 +1,63 @@
+package model;
+
+public class Voiture {
+	
+	private String modele;
+	private int annee;
+	private boolean premiereMain;
+	private int nbRoues;
+	int tankCapacity;
+	boolean power;
+	
+
+	public Voiture(String modele, int annee, boolean premiereMain, int tankCapacity, boolean power){
+		this.modele = modele;
+		this.annee = annee;
+		this.premiereMain = premiereMain;
+		this.nbRoues = 4;
+	}
+	
+	
+	
+	public Object getModele() {
+		return modele;
+	}
+
+	public void setModele(Object modele) {
+		this.modele = modele;
+	}
+
+	public int getAnnee() {
+		return annee;
+	}
+
+	public void setAnnee(int annee) {
+		this.annee = annee;
+	}
+
+	public boolean isPremiereMain() {
+		return premiereMain;
+	}
+
+	public void setPremiereMain(boolean premiereMain) {
+		this.premiereMain = premiereMain;
+	}
+
+
+	public int getNbRoues() {
+		return nbRoues;
+	}
+	*/
+	public Voiture(int nbRoues) {
+		
+	}
+	
+	public void setNbRoues(int nbRoues) {
+		this.nbRoues = nbRoues;
+	}
+	
+	@Override
+	public String toString() {
+		return "Voiture [modele=" + modele + ", annee=" + annee + ", premiereMain=" + premiereMain + ", nbRoues="
+				+ nbRoues + "]";
+	}

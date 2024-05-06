@@ -1,0 +1,25 @@
+package test;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class ScannerTest {
+
+	public static void main(String[] args) {
+		scan("Entrez un mot ou texte");
+	}
+	
+	public static String scan(String[] message) {
+		Scanner userInput = new Scanner(System.in);
+		String stringUserInput = "0";
+		try {
+			System.out.println(message);
+			stringUserInput = userInput.nextLine();
+		} catch (InputMismatchException e) {
+			System.out.println("Erreur : " + e);			
+		}
+		System.out.println(stringUserInput););
+		return stringUserInput;
+	}
+
+}

@@ -1,0 +1,8 @@
+package model;
+
+public class Garage {
+	private Voiture [] garage;
+	public Garage (int taille){
+		garage = Voiture[10];
+	}
+}

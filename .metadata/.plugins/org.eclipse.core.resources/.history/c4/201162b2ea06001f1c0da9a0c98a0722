@@ -1,0 +1,26 @@
+package model;
+
+public class Voiture {
+	
+	public Voiture(Object modele, int annee, boolean premiereMain, int nbRoues){
+		this.modele = modele{nom : "", marque : "");
+		this.annee = annee;
+		this.premiereMain = premiereMain;
+		this.nbRoues = 4;
+	}
+
+	public int getNbRoues() {
+		return nbRoues;
+	}
+	*/
+	public Voiture(int nbRoues) {
+		
+	}
+	
+	public void setNbRoues(int nbRoues) {
+		this.nbRoues = nbRoues;
+	}
+	public void(toString()) {
+		return "C'est une voiture a " + nbRoues + " roues";
+	}
+}

@@ -1,0 +1,22 @@
+package menu;
+import java.util.Scanner;
+
+import model.Voiture;
+
+public class Menu {
+	
+	public void launch(){
+		Sting userInput = ask("Que voulez vous faire?");
+		
+		System.out.println("1. Créer une voiture?");
+		System.out.println("2. Démarrer une voiture?");
+		System.out.println("3. Faire le plein");
+		System.out.println("4. Quitter");
+	}
+	
+	public String ask (String question) {
+		System.out.println(question);
+		Scanner response = new Scanner(System.in);
+		return response.toString();
+	}
+}

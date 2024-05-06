@@ -1,0 +1,14 @@
+package model;
+
+public class Joueur {
+	int y; 
+	int z; 
+	char sprite;
+	public Joueur(int y, int z, char sprite) {
+		super();
+		this.y = y;
+		this.z = z;
+		this.sprite = sprite;
+	}
+	
+}

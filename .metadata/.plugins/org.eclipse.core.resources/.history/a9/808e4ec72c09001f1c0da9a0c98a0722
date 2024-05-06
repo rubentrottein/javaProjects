@@ -1,0 +1,12 @@
+package model;
+
+import java.util.HashMap;
+
+public class NoteList {
+	private HashMap<String, Note> noteList = new HashMap<String, Note>();
+
+	public HashMap<String, Note> getNoteList() {
+		return noteList;
+	}
+
+}

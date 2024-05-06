@@ -1,0 +1,18 @@
+package notepad;
+
+public class Menu {
+	public static void launch (option) {
+		switch (option) {
+			case 1 :
+				saveNote();
+				break;
+			case 2 :
+				noteList();
+				break;
+			case 1 :
+				exit();
+				break;
+		}
+	}
+	
+}

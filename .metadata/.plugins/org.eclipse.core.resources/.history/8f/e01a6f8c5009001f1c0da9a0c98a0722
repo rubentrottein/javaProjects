@@ -1,0 +1,10 @@
+package model;
+
+public class Items extends Elements {
+
+	public Items(int y, int x, String sprite) {
+		super(y, x, sprite);
+		// TODO Auto-generated constructor stub
+	}
+
+}

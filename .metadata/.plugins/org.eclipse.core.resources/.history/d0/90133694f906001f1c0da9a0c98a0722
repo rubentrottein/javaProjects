@@ -1,0 +1,87 @@
+package menu;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+import model.Garage;
+import model.Voiture;
+
+public class Menu {
+	
+	public void launch(running){
+		running = running;
+		Garage garage = new Garage(10);
+		
+		do {
+			printMenuInitial();
+			
+		} while(running);
+	}
+	
+	private void printMenuInitial() {
+		System.out.println("** Jazz Music plays **");
+		System.out.println("Bonjour, Et bienvenue sur notre système?");
+		System.out.println("\nQue souhaitez vous faire?");
+		
+		
+		System.out.println("1. Créer une voiture?");
+		System.out.println("2. Démarrer une voiture?");
+		System.out.println("3. Faire le plein");
+		System.out.println("4. Afficher le Garage");
+		System.out.println("4. Quitter");
+
+		choice(ask("\nVotre choix? [1 / 2 / 3 / 4 / 5"));
+	}
+
+	public int ask (String question) {
+		System.out.println(question);
+		Scanner sc = new Scanner(System.in);
+		try {
+			return sc.nextInt();			
+		} catch (InputMismatchException e) {
+			return 0;
+		}
+	}
+	
+	public int choice(int userChoice) {
+		switch(userChoice) {
+		case 1:
+			createCar();
+			break;
+		case 2:
+			startCar();
+			break;
+		case 3:
+			fillTank();
+			break;
+		case 4:
+			System.out.println(garage);
+			break;
+		case 5:
+			exit();
+			break;
+		default:
+			System.out.println("Saisie incorrecte. Retour au menu principal");
+		}
+	}
+
+	private void exit() {
+		System.out.println("Merci d'avoir fait appel a nos services");
+		System.out.println("** Jazz Music Stops **");
+		this.launch(false);
+	}
+
+	private void fillTank() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void startCar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void createCar() {
+		// TODO Auto-generated method stub
+		
+	}
+}

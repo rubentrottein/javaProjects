@@ -1,0 +1,66 @@
+package menu;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+import content.TextContent;
+import model.Note;
+
+import java.text.DateFormat;
+import java.util.Date;
+
+import model.Note;
+
+public class Menu {
+	public static void launch (option) {
+		switch (option) {
+			case "1" :
+				
+				saveNote(createNote());
+				break;
+			case "2" :
+				noteList();
+				break;
+			case "3" :
+				exit();
+				break;
+			default : 
+				System.out.println(TextContent.ERROR);;
+		}
+	}
+	public static String ask(String message) {
+		System.out.println(message);
+		//Methode Scanner 
+		Scanner sc = new Scanner(System.in);
+		return sc.nextLine();
+	}
+	public static Note createNote() {
+		// date
+		Note newNote = new Note(ask(TextContent.ASKNOTETITLE), ask(TextContent.ASKNOTECONTENT));
+		// titre
+		// content
+		return newNote;
+	}
+	public static void saveNote(Note note) {
+		try {
+			BufferedWriter bf = new BufferedWriter(new FileWriter(note.getDate() + ".txt"));
+			bf.write(note.getContent() + "\n" + note.getContent());
+			bf.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void noteList() {
+		// TODO Auto-generated method stub
+		System.out.println(TextContent.WIP);;
+	}
+
+	private static void exit() {
+		// TODO Auto-generated method stub
+		running = false;
+	}
+	
+}

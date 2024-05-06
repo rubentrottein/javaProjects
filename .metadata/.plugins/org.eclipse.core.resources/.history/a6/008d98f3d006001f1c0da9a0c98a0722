@@ -1,0 +1,17 @@
+package test;
+
+import java.util.Scanner;
+
+public class ScannerTest {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		try {
+			int i = sc.nextInt();
+			System.out.println("Vous avez entré le nombre : " + i);
+		} catch (InputMismatchException) {
+			System.out.println("Erreur : " + e);			
+		}
+	}
+
+}

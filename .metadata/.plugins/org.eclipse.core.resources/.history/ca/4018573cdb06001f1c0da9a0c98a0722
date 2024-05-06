@@ -1,0 +1,13 @@
+package model;
+
+public class Voiture {
+	
+	private int nbRoues = 4;
+	
+	this.constructor(String marque, String modele, int annee, bool premiereMain){
+		this.marque = marque;
+		this.modele = modele;
+		this.annee = annee;
+		this.premiereMain = premiereMain;
+	}
+}

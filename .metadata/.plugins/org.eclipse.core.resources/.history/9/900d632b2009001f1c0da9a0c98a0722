@@ -1,0 +1,20 @@
+package notepad;
+
+public class Menu {
+	public static void launch (String option) {
+		switch (option) {
+			case "1" :
+				saveNote();
+				break;
+			case "2" :
+				noteList();
+				break;
+			case "3" :
+				exit();
+				break;
+			default : 
+				TextContent.error;
+		}
+	}
+	
+}

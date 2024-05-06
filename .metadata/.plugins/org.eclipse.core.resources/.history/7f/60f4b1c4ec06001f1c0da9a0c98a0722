@@ -1,0 +1,15 @@
+package menu;
+import model.Voiture;
+
+public class Menu {
+	
+	public void launch(){
+		prompt("Que voulez vous faire?");
+		System.out.println("1. Créer une voiture?");
+		
+		
+		System.out.println("2. Démarrer une voiture?");
+		System.out.println("3. Faire le plein");
+		System.out.println("4. Quitter");
+	}
+}

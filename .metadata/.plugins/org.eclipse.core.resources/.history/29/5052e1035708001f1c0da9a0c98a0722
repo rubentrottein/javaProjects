@@ -1,0 +1,52 @@
+package guessNumber;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class start {
+	
+	static boolean run = true;
+	static int numberToGuess = 0;
+	
+	public static void main(String[] args) {
+
+		defineNumberToGuess();
+		System.out.println("Devinez notre nombre entre 1 et 100 !");
+		
+		System.out.println(numberToGuess);
+		
+		do {
+			System.out.println(playerGuess());
+		} while (run);
+	}
+	
+	public static void defineNumberToGuess() {
+		// On choisit le nombre a deviner et on le stocke dans une variable
+		Random random = new Random();
+		numberToGuess = random.nextInt(10 - 0);
+	}
+	
+	public static int playerGuess() {
+		System.out.println("Votre Proposition : ");
+		Scanner userInput = new Scanner(System.in);
+		
+		return comparison(userInput.nextInt(), numberToGuess);
+	}
+	
+	public static int comparison(int a, int b) {
+		if(a == b) {			
+			System.out.println("Le numéro caché était bien " + numberToGuess + ". Félicitations !!");
+			run = false;
+			return 1;
+		} if (a > b) {
+			System.out.println("C'est moins!");
+			return 0;
+		} if (a < b) {
+			System.out.println("C'est plus!");
+			return 0;
+		} else {
+			System.out.println("Erreur !");
+			return 0;
+		}
+	}
+}

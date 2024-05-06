@@ -1,0 +1,9 @@
+package menu;
+
+public class Menu {
+	
+	public boolean launch(){
+		System.out.println("Menu");
+		return true;
+	}
+}

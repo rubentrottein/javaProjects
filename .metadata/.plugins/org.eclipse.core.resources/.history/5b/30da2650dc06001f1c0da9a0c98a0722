@@ -1,0 +1,20 @@
+package model;
+
+public class Voiture {
+	
+	public Voiture(String marque, String modele, int annee, bool premiereMain, int nbRoues){
+		this.marque = marque;
+		this.modele = modele;
+		this.annee = annee;
+		this.premiereMain = premiereMain;
+		this.nbRoues = 4;
+	}
+
+	public int getNbRoues() {
+		return nbRoues;
+	}
+
+	public void setNbRoues(int nbRoues) {
+		this.nbRoues = nbRoues;
+	}
+}

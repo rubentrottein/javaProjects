@@ -1,0 +1,31 @@
+package notepad;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
+import content.TextContent;
+import model.Note;
+
+public class Start {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//
+		System.out.println(TextContent.WELCOMETEXT);
+		Menu.launch();
+		/*Fonction d'enregistrement
+		 * -Un nouveau fichier txt avec Date en titre par note  - Done
+		 * 
+		 * Bonus
+		 * Fonction de lecture de la liste des notes - TODO
+		 * récupération du titre et de la date - Done
+		 * lvl1 un Hashmap <Title, Note> - Done
+		 * lvl2 un fichier d'index  - TODO
+		 */
+	}
+
+}

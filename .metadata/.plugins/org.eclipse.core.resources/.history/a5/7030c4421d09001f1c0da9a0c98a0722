@@ -1,0 +1,9 @@
+package notepad;
+
+public class Note {
+	public Note(title, date, content) {
+		this.title = title;
+		this.date = date;
+		this.content = content;
+	}
+}

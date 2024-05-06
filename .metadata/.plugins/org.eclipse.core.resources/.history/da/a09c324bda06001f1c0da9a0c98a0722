@@ -1,0 +1,10 @@
+package objet;
+
+public class Voiture {
+	constructor(String marque, String modele, int annee, bool premiereMain){
+		this.marque = marque;
+		this.modele = modele;
+		this.annee = annee;
+		this.premiereMain = premiereMain;
+	}
+}

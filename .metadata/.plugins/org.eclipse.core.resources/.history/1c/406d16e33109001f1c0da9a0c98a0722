@@ -1,0 +1,19 @@
+package game;
+
+public class Game {
+
+	String[][] carte = new String[10][10];
+	
+	public void launch() {
+		printTab(carte);
+		
+	}
+	public static void printTab(String[][] carte) {
+		for(int i = 0; i<carte.length; i++) {
+			for(int j = 0; j<carte.length; j++) {
+				System.out.print(carte[i][j]);
+			}
+		}
+		System.out.print("\n");
+	}
+}

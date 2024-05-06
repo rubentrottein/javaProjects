@@ -1,0 +1,11 @@
+package notepad;
+
+public class TextContent {
+
+	public static final String WELCOMETEXT = 
+		"\nQue souhaitez vous faire?"
+		+ "\n1. Créer une nouvelle note?"
+		+ "\n2. Afficher la liste des notes"
+		+ "\n3. Quitter";
+	
+}

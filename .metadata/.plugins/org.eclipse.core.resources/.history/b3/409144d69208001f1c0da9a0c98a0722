@@ -1,0 +1,38 @@
+package model;
+
+import java.util.HashMap;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Garage {
+	private HashMap<String, Voiture> garage = new HashMap<String, Voiture>();
+
+	public Garage() {}
+
+	public HashMap<String, Voiture> getGarage() {
+		return garage;
+	}
+
+	public void setGarage(HashMap<String, Voiture> garage) {
+		this.garage = garage;
+	}
+
+	@Override
+	public String toString() {
+		return "Garage [garage=" + garage + "]";
+	}
+	
+
+	public class saveGarage {
+		try {
+			BufferedWriter bf = new BufferedWriter(new FileWriter("garage.txt"));
+			bf.write(this.toString());
+			bf.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

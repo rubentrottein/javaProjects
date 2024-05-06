@@ -1,0 +1,36 @@
+package notepad;
+
+public class Start {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//
+		ask("Voulez vous enregistrer une note? [y/n]");
+		/*Fonction d'enregistrement
+		 * -Un nouveau fichier txt avec Date en titre par note 
+		 * 
+		 * Bonus
+		 * Fonction de lecture de la liste des notes
+		 * récupération du titre et de la date dans 
+		 * lvl1 un Hashmap <Title, Note>
+		 * lvl2 un fichier d'index 
+		 */
+	}
+	public static String ask(message) {
+		//Methode Scanner 
+		
+	}
+	public static Note createNote() {
+		// date
+		Date date = new Date();
+		DateFormat shortDateFormat = DateFormat.getDateTimeInstance(
+			DateFormat.SHORT,
+			DateFormat.SHORT
+		);
+
+		Date today = date.shortDateFormat(date);
+		// titre
+		// content
+	}
+
+}

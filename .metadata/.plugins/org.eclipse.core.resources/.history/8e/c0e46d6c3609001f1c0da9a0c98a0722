@@ -1,0 +1,5 @@
+package model;
+
+public class Joueur {
+	int y; int z; char sprite;
+}

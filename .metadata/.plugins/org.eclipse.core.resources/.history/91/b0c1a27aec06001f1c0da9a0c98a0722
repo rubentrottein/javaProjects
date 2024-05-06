@@ -1,0 +1,10 @@
+package menu;
+import model.Voiture;
+
+public class Menu {
+	
+	public void launch(){
+		System.out.println("Menu");
+
+	}
+}

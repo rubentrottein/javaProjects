@@ -1,0 +1,13 @@
+package objet;
+
+import model.Voiture;
+
+public class IntroObjet {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Voiture v1 = new Voiture({nom : "Clio", marque : "Renault"), 2012, true, 4);
+		System.out.print(v1);
+	}
+
+}

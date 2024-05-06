@@ -1,0 +1,23 @@
+package guessNumber;
+
+import java.util.Scanner;
+
+public class start {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Devinez notre nombre entre 1 et 100 !");
+		System.out.println("Votre Proposition : ");
+	}
+	
+	public int numberToGuess() {
+		Random random = new Random;
+		return random.nextInt(max - min) + min;
+	}
+	
+	public int playerGuess() {
+		System.out.println("Votre Proposition : ");
+		Scanner userInput = new Scanner(System.in);
+		return userInput;
+	}
+}

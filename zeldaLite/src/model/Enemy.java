@@ -1,0 +1,9 @@
+package model;
+
+public class Enemy extends Character{
+
+	public Enemy(int y, int x, String sprite) {
+		super(y, x, sprite);
+		// TODO Auto-generated constructor stub
+	}	
+}

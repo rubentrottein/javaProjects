@@ -1,0 +1,13 @@
+package menu;
+import model.Voiture;
+
+public class Menu {
+	
+	public void launch(){
+		System.out.println("Que voulez vous faire?");
+		System.out.println("Créer une voiture?");
+		
+		System.out.println("1 pour allumer une voitur?");
+		System.out.println("Que voulez vous faire?");
+	}
+}

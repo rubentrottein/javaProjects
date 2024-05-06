@@ -1,0 +1,48 @@
+package guessNumber;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class start {
+	
+	boolean run = true;
+	int numberToGuess = 0;
+	
+	public static void main(String[] args) {
+
+		defineNumberToGuess();
+		System.out.println("Devinez notre nombre entre 1 et 100 !");
+		
+		System.out.println(numberToGuess);
+		
+		do {
+			System.out.println(playerGuess());
+		} while (run);
+	}
+	
+	public static void defineNumberToGuess() {
+		Random random = new Random();
+		numberToGuess = random.nextInt(10 - 0);
+	}
+	
+	public static int playerGuess() {
+		System.out.println("Votre Proposition : ");
+		Scanner userInput = new Scanner(System.in);
+		
+		return comparison(userInput.nextInt(), numberToGuess);
+	}
+	
+	public boolean comparison(a, b) {
+		if(a == b) {			
+			System.out.println("Le numéro caché était bien " + numberToGuess + ". Félicitations !!");
+			run = false;
+			return true;
+		} if (a > b) {
+			System.out.println("C'est moins!");
+			return false;
+		} if (a < b) {
+			System.out.println("C'est plus!");
+			return false;
+		}
+	}
+}

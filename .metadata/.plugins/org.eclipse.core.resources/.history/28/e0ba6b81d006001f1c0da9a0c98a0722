@@ -1,0 +1,14 @@
+package test;
+
+import Java.Util.Scanner
+
+public class ScannerTest {
+
+	public static void main(String[] args) {
+		try {
+			Scanner sc = new Scanner(System.in);
+			
+		}
+	}
+
+}

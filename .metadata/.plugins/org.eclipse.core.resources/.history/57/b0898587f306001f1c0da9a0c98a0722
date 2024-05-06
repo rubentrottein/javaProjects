@@ -1,0 +1,73 @@
+package model;
+
+public class Voiture {
+	
+	private String modele;
+	private int annee;
+	private boolean premiereMain;
+	int tankCapacity;
+	boolean power;
+	private int nbRoues;
+	
+
+	public Voiture(String modele, int annee, boolean premiereMain, int fuel, boolean power){
+		this.modele = modele;
+		this.annee = annee;
+		this.premiereMain = premiereMain;
+		this.power = power;
+		this.fuel = fuel;
+		this.nbRoues = 4;
+	}
+	
+	public void description() {
+		System.out.print("Cette voiture est une " + voiture.modele);
+		System.out.print("Sortie d'usine en " + voiture.annee);
+		if(premiereMain) {System.out.print(". Etat Neuf .")};
+		if(power) {System.out.print(". Etat Neuf .")};
+		System.out.println("Le réservoir d'essence contient " + voiture.fuel);
+		System.out.println("Cette voiture est une " + voiture.modele);
+	}
+	
+	public Object getModele() {
+		return modele;
+	}
+
+	public void setModele(Object modele) {
+		this.modele = modele;
+	}
+
+	public int getAnnee() {
+		return annee;
+	}
+
+	public void setAnnee(int annee) {
+		this.annee = annee;
+	}
+
+	public boolean isPremiereMain() {
+		return premiereMain;
+	}
+
+	public void setPremiereMain(boolean premiereMain) {
+		this.premiereMain = premiereMain;
+	}
+
+
+	public int getNbRoues() {
+		return nbRoues;
+	}
+	
+	public Voiture(int nbRoues) {
+		
+	}
+	
+	public void setNbRoues(int nbRoues) {
+		this.nbRoues = nbRoues;
+	}
+	
+	@Override
+	public String toString() {
+		return "Voiture [modele=" + modele + ", annee=" + annee + ", premiereMain=" + premiereMain + ", nbRoues="
+				+ nbRoues + "]";
+	}
+}

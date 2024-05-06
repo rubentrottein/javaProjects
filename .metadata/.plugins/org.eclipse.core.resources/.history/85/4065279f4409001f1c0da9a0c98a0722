@@ -1,0 +1,11 @@
+package model;
+
+public class Joueur extends Character {
+
+	public Joueur(int y, int x, String sprite) {
+		super(y, x, sprite);
+	}
+	
+	
+	
+}

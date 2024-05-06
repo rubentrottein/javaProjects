@@ -1,0 +1,44 @@
+package notepad;
+
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.HashMap;
+
+import model.Voiture;
+
+public class Note {
+	private String title;
+	private LocalDate date;
+	private String content;
+
+	public Note(String title, LocalDate date, String content) {
+		this.title = title;
+		this.date = LocalDate.now();
+		this.content = content;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public date getDate() {
+		return date;
+	}
+
+	public void setDate(date date) {
+		this.date = date;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+	
+}

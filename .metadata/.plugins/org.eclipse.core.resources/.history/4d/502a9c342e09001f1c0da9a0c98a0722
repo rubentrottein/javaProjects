@@ -1,0 +1,13 @@
+package game;
+
+public class Game {
+
+	public static void launch() {
+		// TODO Auto-generated method stub
+		String [10] board = new board();
+		for(int i = 0; i<board.length; i++) {
+			board[i] = "-";
+		}
+	}
+
+}

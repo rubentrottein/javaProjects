@@ -1,0 +1,24 @@
+package test;
+
+public class StringExos {
+	public static void main(String[] args) {
+		String s = "Hello";
+		
+		write(s);
+		inverseString(s);
+		
+		
+	}
+	public static String write(String s) {
+		System.out.println(s);
+		return s;
+	}
+	public void inverseString(String stringToInverse) {
+		char[] string = stringToInverse.toCharArray();
+		String convertedString = ""; 
+		for(int i=string.length; i>0; i--) {
+			 convertedString += string[i];
+		}
+		System.out.println( convertedString );
+	}
+}

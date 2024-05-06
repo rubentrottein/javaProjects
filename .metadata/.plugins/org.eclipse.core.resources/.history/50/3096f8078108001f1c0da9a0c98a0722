@@ -1,0 +1,124 @@
+package menu;
+import java.util.InputMismatchException;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
+import model.Garage;
+import model.Voiture;
+
+public class Menu {
+	
+	boolean running = true;
+	Garage garage = new Garage();
+
+	public void launch(){
+		
+		do {
+			printMenuInitial();
+			useFuel();
+		} while(running);
+	}
+	
+	private void printMenuInitial() {
+		System.out.println("** Jazz Music plays **");
+		System.out.println("Bonjour, Et bienvenue sur notre système?");
+		System.out.println("\nQue souhaitez vous faire?");
+		
+		
+		System.out.println("1. Créer une voiture?");
+		System.out.println("2. Démarrer une voiture?");
+		System.out.println("3. Faire le plein");
+		System.out.println("4. Afficher le Garage");
+		System.out.println("4. Quitter");
+
+		choice(ask("\nVotre choix? [1 - 5]"));
+	}
+
+	public void choice(int userChoice) {
+		switch(userChoice) {
+		case 1:
+			createCar();
+			break;
+		case 2:
+			startCar();
+			break;
+		case 3:
+			fillTank();
+			break;
+		case 4:
+			System.out.println(garage);
+			break;
+		case 5:
+			exit();
+			break;
+		default:
+			System.out.println("Saisie incorrecte. Retour au menu principal");
+		}
+	}
+
+	
+	//User Input
+	public String ask (String question) {
+		System.out.println(question);
+		Scanner sc = new Scanner(System.in);
+		try {
+			return String.valueOf(sc.nextInt());		
+			} catch (InputMismatchException e) {
+				return sc.nextLine();
+			}
+		}
+		
+	}
+
+	public String askModel (String question) {
+		System.out.println(question);
+		Scanner sc = new Scanner(System.in);
+		
+	}
+	
+	
+	private void exit() {
+		System.out.println("Merci d'avoir fait appel a nos services \b ** La musique Jazz s'arrête **");
+	}
+
+	private void fillTank() {
+		selectCar().setFuel(100);
+		System.out.println("Plein effectué");
+		
+	}
+
+	private Voiture selectCar() {
+		Object saisieUtilisateur = ask("Numéro ou Modèle de la voiture");
+		Voiture voiture = garage.getGarage().get(saisieUtilisateur);
+		
+	}
+
+	private void startCar() {
+		Voiture voiture = selectCar();
+		voiture.setPower(true);
+		if(voiture.getPower() && voiture.getFuel()>0) {
+			System.out.println("Voiture démarrée");
+		}
+	}
+
+	private void createCar() {
+		String model = askModel("Modèle de la nouvelle voiture");
+		Voiture voiture = new Voiture(model, 2024, true, 100, false);
+		garage.getGarage().put(voiture.getModel(), voiture);
+		System.out.println(garage.toString());
+	}
+
+
+	private void useFuel() {
+		
+		for(Entry<String, Voiture>voitureSet: garage.getGarage().entrySet()) {
+			Voiture voiture = voitureSet.getValue();
+			if(voiture != null && voiture.getPower() == true) { 
+				voiture.setFuel(voiture.getFuel()-20);
+				System.out.println(voiture.getModel() + " fuel restant " + voiture.getFuel());
+				
+			}
+		}
+	}
+	
+}
