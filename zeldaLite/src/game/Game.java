@@ -2,6 +2,9 @@ package game;
 
 import model.Joueur;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,6 +14,7 @@ import model.Item;
 
 public class Game {
 
+	//String[][] carte = null;
 	String[][] carte = new String[15][30];
 	Joueur link = new Joueur(5,5,"L",3, 0);
 	ArrayList<Element> enemyList = new ArrayList<Element>();
@@ -18,7 +22,12 @@ public class Game {
 	boolean gameOn = true;
 	
 	public void launch() {
+		/*
+		 * cardReader();
+		 * 
+		*/
 		createMap();
+
 		updateMapWithElement(link);
 		createElements();
 		addElementsOnMap(enemyList);
@@ -29,6 +38,7 @@ public class Game {
 			handleMovement();
 			updateMapWithElement(link);
 		}
+		/**/
 		
 	}
 	
@@ -148,14 +158,13 @@ public class Game {
 		}
 		System.out.println();
 	}
-	
+	/**/
 	private String[][] createMap(){
 		for(int i = 0; i < carte.length; i++) {
 			for(int j = 0; j < carte[i].length; j++) {
 				if(j == 0 || j == carte[i].length-1 || i == 0 || i == carte.length-1) {
 					carte[i][j] = "M";
 				}
-				//if (j != 0 || j != carte[i].length-1 || i != 0 || i != carte.length-1)
 				else {
 					carte[i][j] = " ";
 				}
@@ -163,4 +172,33 @@ public class Game {
 		}
 		return carte;
 	}
+	/**/
+	/** Dessin de la carte depuis le fichier Txt **
+	private void createMap() {
+		try {
+			BufferedReader br = new BufferedReader(new FileReader("map.txt"));
+			int y = Integer.valueOf(br.readLine());
+			int x = Integer.valueOf(br.readLine());
+			carte = new String[x][y];
+			String line = br.readLine();
+				for(int i = 0;i <carte.length;i++) {				
+					char[] lineCharArray = line.toCharArray();
+					for (int j = 0; j < carte[i].length; j++) {
+						carte[i][j] = Character.toString(lineCharArray[j]);
+					}
+				}
+			br.close();
+		} catch (IOException e) { 
+			e.printStackTrace();
+		}
+	}
+	
+	//Char [] line = br.readLine().toCharArray();	
+		/*Verification de la carte OK
+		for (int i=0;i<=y; i++){
+			System.out.println( br.readLine());
+		}
+	/**/
 }
+
+			
