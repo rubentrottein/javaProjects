@@ -1,0 +1,33 @@
+--Développement URGENT --
+
+Outil de gestion de festival musical.
+
+
+Vous allez reprendre le code d'un autre développeur. La mission est de créer un outil de gestion pour un festival musical.
+Une partie du code est déjà existante, mais le développement est incomplet.
+Le développeur s'est arrêté en plein milieu de son travail. Il a laissé des indications dans le code pouvant servir d'indice pour finir de mettre en place ce qu'il a commencé.
+Il faut :
+. Reprendre le code existant pour faire en sorte que le projet s'exécute. Pour l'instant, il est impossible de le lancer.
+  L'IDE indique plusieurs erreurs, l'ancien développeur nous a dit qu'il s'agissait d'une piste.
+. Reprendre le code existant pour lui faire respecter un minimum de cohérence et de bonnes pratiques.
+. Compléter le code pour respecter le cahier des charges. L'ancien développeur a laissé des TODO qu'il faudra compléter.
+
+
+La logique du code existant devrait pouvoir être respectée.
+
+
+
+
+Règles métiers :
+Le festival aura plusieurs scènes.
+Chaque scène accueillera plusieurs groupes.
+
+On doit pouvoir faire du CRUD sur scène et groupe.
+Par exemple, on doit pouvoir créer un groupe qui sera alors ajouté à la map des groupes.
+
+On doit pouvoir ajouter un concert existant à une scène, et une scène existante à un festival.
+
+On doit pouvoir enregistrer les données dans un fichier (un fichier .txt conviendra très bien).
+
+
+Le code devra être rendu sur la plateforme de travail(moodle) avant 11h dernier délai.
