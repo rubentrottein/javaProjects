@@ -10,5 +10,5 @@ public class TextContent {
 	+ "\n4 Vendre au marché"
 	+ "\n5 Sauvegarder"
 	+ "\n6 Exit";
-	public static final String EXIT = "Merci d'avoir utilisé notre application de Potager! \n A très bientôt!" ;
+	public static final String EXIT = "Merci d'avoir utilisé notre application de Potager! \n ❤💓 A très bientôt! 💗💖" ;
 }

@@ -1,5 +1,8 @@
 package menu;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -38,7 +41,7 @@ public class Potager {
 		boolean appliOn = true;
 		
 		do {
-			//a la bonne place???
+			//DONE a la bonne place???
 			System.out.println(TextContent.MAINMENU);
 
 			int action = Utilitaires.readInt();
@@ -54,33 +57,49 @@ public class Potager {
 				break;
 			case 2:
 				Utilitaires.printPotager(potager);
+				Utilitaires.printGardeManger(gardeManger);
+				time();
 				break;
 			case 3:
 				System.out.print("Quel fruit ou legume voulez vous recolter?");
 				boolean harvest = true;
+				//Boucle de récolte
 				do{
-					Utilitaires.printPotager(potager);
+					System.out.println(Utilitaires.printPotager(potager));
+					System.out.print("0. Annuler");
 					int userInput = Utilitaires.readInt();
-					Aliment alimentToHarvest = potager.get(userInput);
-					if(alimentToHarvest.getMomentPousse() == alimentToHarvest.getDureePousse() && userInput != 0) {
-						harvestAliment(alimentToHarvest);
-					} else {
-						System.out.println("Rien a récolter !");
+					if (userInput == 0) {
+						System.out.println("Retour au menu principal ... ");
 						harvest = false;
+						break;
+					}else {
+						Aliment alimentToHarvest = potager.get(userInput-1);
+						System.out.println("Sélection" + alimentToHarvest.getNom());
+						if(alimentToHarvest.getMomentPousse() == alimentToHarvest.getDureePousse()) {
+							//TODO
+							//On peut recolter l'un des fruits/legumes à maturité (ni trop tôt, ni trop tard)
+							System.out.println("Recolte de " + alimentToHarvest.getNom());
+							harvestAliment(alimentToHarvest);
+							potager.remove(userInput-1);
+						} 
+						else {
+							System.out.println("Rien à récolter ... ");
+							harvest = false;
+						}
 					}
 				} while (harvest);
-				//TO DO
-				//On peut recolter l'un des fruits/legumes à maturité (ni trop tôt, ni trop tard)
 				break;
 			case 4 : 
 				System.out.println("Vente au marché");
-				//TO DO
+				//TODO
 				//Quel fruit/legume vendre ?
 				break;
 			
 			case 5:
 				System.out.println("Sauvegarde dans un fichier");
-				//TO DO
+				savePotager();
+				saveGardeManger();
+				//TODO
 				//On sauvegarde ce qui est dans le potager, ainsi que l'argent courant
 				break;
 			case 6:
@@ -90,10 +109,9 @@ public class Potager {
 			default:
 				System.out.println(TextContent.ERROR);
 			}
-			time();
 		}
 		
-		/*TO DO
+		/*TODO
 		*ajout : la pousse de chaque fruit/legume du potager 
 		*(il faut qu'à chaque action, tous les fruits et légumes poussent)
 		*les fruits et légumes trop mûr sont perdus et retirés du potager
@@ -105,15 +123,41 @@ public class Potager {
 
 
 
-	private void harvestAliment(Aliment aliment) {
-		potager.remove(aliment);
-		if(gardeManger.get(aliment) != null) {
-			gardeManger.put(aliment, 0);
-		} else {
-			gardeManger.put(aliment, gardeManger.get(aliment)+1);
-			System.out.println("Etat du garde-manger : n");
-			Utilitaires.printGardeManger(gardeManger);
+	private void saveGardeManger() {
+		// TODO Auto-generated method stub
+		try {
+			BufferedWriter bf = new BufferedWriter(new FileWriter("Garde-Manger.txt"));
+			bf.write("Garde-manger : \n" + Utilitaires.printGardeManger(gardeManger));
+			bf.close();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+		System.out.println("Etat du gardeManger actuel sauvegardé dans le fichier Garde-Manger.txt (dossier racine)");
+	}
+
+
+
+
+	private void savePotager() {
+		// TODO Auto-generated method stub
+		try {
+			BufferedWriter bf = new BufferedWriter(new FileWriter("Potager.txt"));
+			bf.write("\n" + potager.toString());
+			bf.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Etat du potager actuel sauvegardé dans le fichier potager.txt (dossier racine)");
+	}
+
+	private void harvestAliment(Aliment aliment) {
+		if(gardeManger.get(aliment) == null) {
+			gardeManger.put(aliment, aliment.getRecoltePousse());
+		} else {
+			System.out.println("trying " + aliment + " , " + gardeManger.get(aliment)+aliment.getRecoltePousse());
+			gardeManger.put(aliment, gardeManger.get(aliment)+aliment.getRecoltePousse());
+		}
+		System.out.println("Etat du garde-manger : \n" + Utilitaires.printGardeManger(gardeManger));
 	}
 
 
@@ -129,6 +173,7 @@ public class Potager {
 				potager.remove(i);
 			}
 		}
+		System.out.println("Le temps passe ... \n " + Utilitaires.printPotager(potager));
 	}
 
 
@@ -143,6 +188,7 @@ public class Potager {
 		case 2 : 
 			Carotte carrot = new Carotte();
 			potager.add(carrot);
+			break;
 		case 3 :
 			Poireau leek = new Poireau(); 
 			potager.add(leek);
@@ -153,6 +199,7 @@ public class Potager {
 			break;
 		default : System.out.println(TextContent.ERROR);
 		}
+		time();
 	}
 	
 

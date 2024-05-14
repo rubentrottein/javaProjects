@@ -2,7 +2,6 @@ package tools;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map.Entry;
 
 import model.Aliment;
 
@@ -21,23 +20,27 @@ public class Utilitaires {
 		return i;
 	}	
 
-	//le truc qui print le potager doit indiquer par une lettre minuscule
-	//ce qui n'est pas mûr, et par une majuscule ce qui est prêt à être recolté
-	//donc, pas ce qui est en dessous!
-
-	public static void printPotager(ArrayList<Aliment> potager) {
+	/*DONE 
+	* le truc qui print le potager doit indiquer par une lettre minuscule
+	* ce qui n'est pas mûr, et par une majuscule ce qui est prêt à être recolté
+	* donc, pas ce qui est en dessous!
+	*/
+	public static String printPotager(ArrayList<Aliment> potager) {
+		String resume = "";
+		int elementNumber = 0;
 		for(Aliment aliment : potager) {
-			int elementNumber = 1;
-			if(aliment.getDureePousse() == aliment.getMomentPousse()) {
-				System.out.println("(Prêt a récolter)");				
+			elementNumber++;
+			if(aliment.getMomentPousse() >= aliment.getDureePousse()) {
+				resume += "(Prêt a récolter)";
 			} else {
-				System.out.println("(En croissance)");								
+				resume+= "(En croissance)";
 			}
-			System.out.print(elementNumber + " " + aliment.toString());
+			resume += "\n" + elementNumber + " " + aliment.toString();
 		}
+		return resume;
 	}
 
-	public static String readStr() {
+	public static String readString() {
 		// TODO Supprimer si pas nécessaire
 		Scanner sc = new Scanner(System.in);
 		String i = "";
@@ -49,16 +52,11 @@ public class Utilitaires {
 		return i;
 	}
 
-	public static void printGardeManger(HashMap<Aliment, Integer> gardeManger) {
-	    for (Aliment aliment : gardeManger.keySet()) {
-	      System.out.println("Name: " + aliment.getNom() + " Nombre: " + gardeManger.get(aliment));
+	public static String printGardeManger(HashMap<Aliment, Integer> gardeManger) {
+		String resume = "";
+		for (Aliment aliment : gardeManger.keySet()) {
+	      resume += "\nName: " + aliment.getNom() + " Nombre: " + gardeManger.get(aliment);
 	    }
+	    return resume;
 	}
-	
-	
-	
-	
-	
-	
-	
 }
